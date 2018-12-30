@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 MAINTAINER Sebastian Graf <sgraf1337@gmail.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -15,8 +15,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip
 
 RUN rm -rf /var/lib/apt/lists
-RUN curl -L https://github.com/commercialhaskell/stack/releases/download/v1.4.0/stack-1.4.0-linux-x86_64.tar.gz | tar zx -C /tmp
-RUN mv /tmp/stack-1.4.0-linux-x86_64/stack /usr/local/bin
+RUN curl -L https://github.com/commercialhaskell/stack/releases/download/v1.9.3/stack-1.9.3-linux-x86_64.tar.gz | tar zx -C /tmp
+RUN mv /tmp/stack-1.9.3-linux-x86_64/stack /usr/local/bin
 RUN stack setup
 
 ENTRYPOINT /bin/bash
